@@ -1,0 +1,65 @@
+body,
+html {
+    height: 100%;
+}
+
+.bg-image {
+    /* The image used */
+    background-image: url("https://source.unsplash.com/user/davehoefler");
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    /* Full height */
+    height: 100vh;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+    background-image: url("https://source.unsplash.com/user/davehoefler");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 24px;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 1000px;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+#quote-btn {
+    width: 200px;
+    height: 50px;
+    border: 1px solid white;
+    outline: none;
+    background: white;
+    color: teal;
+    font-size: 18px;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-family: "Lobster", cursive;
+}
+
+#quote-btn:hover {
+    background: teal;
+    color: white;
+}
