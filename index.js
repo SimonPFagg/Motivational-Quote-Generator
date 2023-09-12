@@ -1,43 +1,26 @@
-const quote =
-    document.getElementById("quote");
-const btn = document.getElementById(
-    "quote-btn"
-);
-const bgImage =
-    document.getElementsByClassName(
-        "bg-image"
-    );
+const myButton = document.getElementById("quote-btn");
+const myQuote = document.getElementById("quote");
+const myBackground = document.getElementsByClassName("bg-image");
 
-btn.addEventListener(
-    "click",
-    createQuote
-);
-btn.addEventListener(
-    "click",
-    changeBackground
-);
+document.getElementById("quote-btn").addEventListener("click", buttonQuote);
+document.getElementById("quote-btn").addEventListener("click", changeBackground);
 
-createQuote();
+// Function for Random Number
+function getRandomNumber() {
+    let randomNumber = Math.floor(Math.random() * 16)
+    return randomNumber;
+}
 
-function createQuote() {
-    const randomNumber = Math.floor(
-        Math.random() * 1643
-    );
-    const config = {
-        headers: {
-            Accept: "application/json",
-        },
-    };
+// Fetch quote
+function buttonQuote() {
 
     fetch("https://type.fit/api/quotes")
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            quote.innerHTML =
-                '"' +
-                data[randomNumber]
-                    .text +
-                '"';
+            let randomQuote = data[getRandomNumber()].text;
+            myQuote.innerHTML = randomQuote;
         });
+
 }
